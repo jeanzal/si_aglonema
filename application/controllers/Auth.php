@@ -10,6 +10,9 @@ class Auth extends CI_Controller {
     }
 	public function index()
 	{
+        if($this->session->userdata('email')){
+            redirect('dashboard');
+        }
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
         $this->form_validation->set_rules('password', 'Password', 'required|trim');
         if($this->form_validation->run() == false ){
@@ -52,6 +55,9 @@ class Auth extends CI_Controller {
     }
     public function registrasi()
     {
+        if($this->session->userdata('email')){
+            redirect('dashboard');
+        }
         $this->form_validation->set_rules('name', 'Name', 'required|trim');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', 
             ['is_unique' => 'Email Sudah Terdaftar!']);
