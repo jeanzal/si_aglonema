@@ -31,19 +31,40 @@
     </div>
 
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#data" aria-expanded="true" aria-controls="data">
             <i class="fas fa-fw fa-file"></i>
-            <span>Data</span></a>
+            <span>Data</span>
+        </a>
+        <div id="data" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="<?= base_url('data/list_jenis') ?>">Jenis Aglonema</a>
+                <a class="collapse-item" href="<?= base_url('data/list_tanaman') ?>">Data Tanaman</a>
+            </div>
+        </div>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#gejala" aria-expanded="true" aria-controls="gejala">
             <i class="fas fa-fw fa-file"></i>
-            <span>Gejala</span></a>
+            <span>Gejala</span>
+        </a>
+        <div id="gejala" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="#">Jenis Penyakit</a>
+                <a class="collapse-item" href="#">Jenis Gejala</a>
+            </div>
+        </div>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#obat" aria-expanded="true" aria-controls="obat">
             <i class="fas fa-fw fa-cannabis"></i>
-            <span>Obat</span></a>
+            <span>Obat</span>
+        </a>
+        <div id="obat" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="#">Jenis Obat</a>
+                <a class="collapse-item" href="#">Data Obat</a>
+            </div>
+        </div>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="#">
