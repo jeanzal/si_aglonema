@@ -9,6 +9,7 @@ class Data extends CI_Controller {
         if(!$this->session->userdata('email')){
             redirect('auth');
         }
+        $this->load->model('Data_M');
     }
 
     public function list_jenis()
@@ -16,6 +17,7 @@ class Data extends CI_Controller {
         $data['title'] = "Data Aglonema";
         $data['title_dalam'] = "Jenis Aglonema";
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['data_jenis'] = $this->Data_M->get_data_jenis();
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
