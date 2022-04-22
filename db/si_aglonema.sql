@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 22, 2022 at 05:53 PM
+-- Generation Time: Apr 22, 2022 at 06:15 PM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 SET
@@ -34,7 +34,7 @@ SET
 -- Table structure for table `jenis_aglonema`
 --
 CREATE TABLE `jenis_aglonema` (
-  `id` int(11) NOT NULL,
+  `id_jenis` int(11) NOT NULL,
   `jenis_aglonema` varchar(50) NOT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
 
@@ -106,7 +106,7 @@ VALUES
 ALTER TABLE
   `jenis_aglonema`
 ADD
-  PRIMARY KEY (`id`);
+  PRIMARY KEY (`id_jenis`);
 
 --
 -- Indexes for table `user`
@@ -133,8 +133,8 @@ ADD
 ALTER TABLE
   `jenis_aglonema`
 MODIFY
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  AUTO_INCREMENT = 12;
+  `id_jenis` int(11) NOT NULL AUTO_INCREMENT,
+  AUTO_INCREMENT = 14;
 
 --
 -- AUTO_INCREMENT for table `user`
