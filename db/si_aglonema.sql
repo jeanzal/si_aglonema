@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 22, 2022 at 07:26 PM
+-- Generation Time: Apr 22, 2022 at 07:29 PM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 SET
@@ -47,15 +47,6 @@ CREATE TABLE `jenis_aglonema` (
   `id_jenis` int(11) NOT NULL,
   `jenis_aglonema` varchar(50) NOT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
-
---
--- Dumping data for table `jenis_aglonema`
---
-INSERT INTO
-  `jenis_aglonema` (`id_jenis`, `jenis_aglonema`)
-VALUES
-  (14, 'Bunga Mekar'),
-  (15, 'Bungan Melati');
 
 -- --------------------------------------------------------
 --
