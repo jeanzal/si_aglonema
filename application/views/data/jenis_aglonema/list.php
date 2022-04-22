@@ -17,8 +17,8 @@
                         <td><?= $no++; ?></td>
                         <td><?= $a->jenis_aglonema ?></td>
                         <td>
-                            <a href="<?= base_url('data/edit_jenis/' . $a->id) ?>" class="btn btn-sm btn-info" ><li class="fas fa-edit"></li> </a>
-                            <a onclick="return confirm('Apakah yakin hapus data ini ?')" href="<?= base_url('data/hapus_jenis/' . $a->id) ?>" class="btn btn-sm btn-danger"><li class="fas fa-trash-alt"></li> </a>
+                            <a href="<?= base_url('data/edit_jenis/' . $a->id_jenis) ?>" class="btn btn-sm btn-info" ><li class="fas fa-edit"></li> </a>
+                            <a onclick="return confirm('Apakah yakin hapus data ini ?')" href="<?= base_url('data/hapus_jenis/' . $a->id_jenis) ?>" class="btn btn-sm btn-danger"><li class="fas fa-trash-alt"></li> </a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

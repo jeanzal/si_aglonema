@@ -68,7 +68,7 @@ class Data extends CI_Controller {
     }
     public function edit_jenis($id)
     {
-        $where = array('id' => $id);
+        $where = array('id_jenis' => $id);
         $data['title'] = "Update Jenis Aglonema";        
         $data['title_dalam'] = "Update Jenis Algonema";
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
@@ -87,7 +87,7 @@ class Data extends CI_Controller {
         $data = [
             "jenis_aglonema" => $jenis_aglonema
         ];
-        $where = array('id'=>$id);
+        $where = array('id_jenis'=>$id);
         if($this->Data_M->update_jenis($where,$data,'jenis_aglonema') == false){
             $this->session->set_flashdata('pesan','<div class="alert alert-success" role="alert"> Data Berhasil diupdate </div>');
             redirect('data/list_jenis');
@@ -98,7 +98,7 @@ class Data extends CI_Controller {
     }
     public function hapus_jenis($id)
     {
-        $where = array('id' => $id);
+        $where = array('id_jenis' => $id);
         if($this->Data_M->hapus_jenis($where, 'jenis_aglonema') == false){
             $this->session->set_flashdata('pesan','<div class="alert alert-success" role="alert"> Data Berhasil dihapus </div>');
             redirect('data/list_jenis');
