@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 22, 2022 at 06:15 PM
+-- Generation Time: Apr 22, 2022 at 07:26 PM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 SET
@@ -31,12 +31,31 @@ SET
 --
 -- --------------------------------------------------------
 --
+-- Table structure for table `data_tanaman`
+--
+CREATE TABLE `data_tanaman` (
+  `id_tanaman` int(11) NOT NULL,
+  `id_jenis` int(11) DEFAULT NULL,
+  `ciri_khas` text DEFAULT NULL
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
+
+-- --------------------------------------------------------
+--
 -- Table structure for table `jenis_aglonema`
 --
 CREATE TABLE `jenis_aglonema` (
   `id_jenis` int(11) NOT NULL,
   `jenis_aglonema` varchar(50) NOT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
+
+--
+-- Dumping data for table `jenis_aglonema`
+--
+INSERT INTO
+  `jenis_aglonema` (`id_jenis`, `jenis_aglonema`)
+VALUES
+  (14, 'Bunga Mekar'),
+  (15, 'Bungan Melati');
 
 -- --------------------------------------------------------
 --
@@ -101,6 +120,16 @@ VALUES
 -- Indexes for dumped tables
 --
 --
+-- Indexes for table `data_tanaman`
+--
+ALTER TABLE
+  `data_tanaman`
+ADD
+  PRIMARY KEY (`id_tanaman`),
+ADD
+  KEY `id_barang` (`id_jenis`);
+
+--
 -- Indexes for table `jenis_aglonema`
 --
 ALTER TABLE
@@ -128,13 +157,22 @@ ADD
 -- AUTO_INCREMENT for dumped tables
 --
 --
+-- AUTO_INCREMENT for table `data_tanaman`
+--
+ALTER TABLE
+  `data_tanaman`
+MODIFY
+  `id_tanaman` int(11) NOT NULL AUTO_INCREMENT,
+  AUTO_INCREMENT = 5;
+
+--
 -- AUTO_INCREMENT for table `jenis_aglonema`
 --
 ALTER TABLE
   `jenis_aglonema`
 MODIFY
   `id_jenis` int(11) NOT NULL AUTO_INCREMENT,
-  AUTO_INCREMENT = 14;
+  AUTO_INCREMENT = 16;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -153,6 +191,17 @@ ALTER TABLE
 MODIFY
   `id` int(11) NOT NULL AUTO_INCREMENT,
   AUTO_INCREMENT = 3;
+
+--
+-- Constraints for dumped tables
+--
+--
+-- Constraints for table `data_tanaman`
+--
+ALTER TABLE
+  `data_tanaman`
+ADD
+  CONSTRAINT `id_barang` FOREIGN KEY (`id_jenis`) REFERENCES `jenis_aglonema` (`id_jenis`);
 
 COMMIT;
 
