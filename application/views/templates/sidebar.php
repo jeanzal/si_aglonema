@@ -49,8 +49,8 @@
         </a>
         <div id="gejala" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="#">Jenis Penyakit</a>
-                <a class="collapse-item" href="#">Jenis Gejala</a>
+                <a class="collapse-item" href="<?= base_url('gejala/list_penyakit') ?>">Jenis Penyakit</a>
+                <a class="collapse-item" href="<?= base_url('gejala/list_gejala') ?>">Jenis Gejala</a>
             </div>
         </div>
     </li>
@@ -77,8 +77,7 @@
             <span>User Management</span></a>
     </li>
     <li class="nav-item">
-        <a onclick="return confirm('Apakah anda Yakin keluar ?')" class="nav-link"
-            href="<?= base_url('auth/logout') ?>">
+        <a onclick="return confirm('Apakah anda Yakin keluar ?')" class="nav-link" href="<?= base_url('auth/logout') ?>">
             <i class="fas fa-fw fa-sign-out-alt"></i>
             <span>Keluar</span></a>
     </li>
