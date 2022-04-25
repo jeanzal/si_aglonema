@@ -14,7 +14,7 @@
             </div>
             <div class="form-group">
                 <label class="form-label">Ciri Khas</label>
-                <textarea name="ciri_khas" class="form-control" rows="3" required></textarea>
+                <textarea name="ciri_khas" class="form-control" rows="3" placeholder="Ciri Khas Tanaman Aglonema" required></textarea>
             </div>
             <div class="form-group">
                 <a class="btn btn-sm btn-info" href="<?= base_url('data/list_tanaman') ?>">
