@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 25 Apr 2022 pada 06.02
+-- Waktu pembuatan: 25 Apr 2022 pada 06.49
 -- Versi server: 10.4.16-MariaDB
 -- Versi PHP: 7.4.12
 
@@ -47,6 +47,18 @@ CREATE TABLE `jenis_aglonema` (
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `jenis_gejala`
+--
+
+CREATE TABLE `jenis_gejala` (
+  `id_gejala` int(11) NOT NULL,
+  `id_penyakit` int(11) DEFAULT NULL,
+  `karakteristik_gejala` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `jenis_penyakit`
 --
 
@@ -54,14 +66,6 @@ CREATE TABLE `jenis_penyakit` (
   `id_penyakit` int(11) NOT NULL,
   `jenis_penyakit` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `jenis_penyakit`
---
-
-INSERT INTO `jenis_penyakit` (`id_penyakit`, `jenis_penyakit`) VALUES
-(2, 'Mencret Banyak'),
-(3, 'Lambung');
 
 -- --------------------------------------------------------
 
@@ -115,13 +119,20 @@ INSERT INTO `user_role` (`id`, `role`) VALUES
 --
 ALTER TABLE `data_tanaman`
   ADD PRIMARY KEY (`id_tanaman`),
-  ADD KEY `id_barang` (`id_jenis`);
+  ADD KEY `id_jenis` (`id_jenis`);
 
 --
 -- Indeks untuk tabel `jenis_aglonema`
 --
 ALTER TABLE `jenis_aglonema`
   ADD PRIMARY KEY (`id_jenis`);
+
+--
+-- Indeks untuk tabel `jenis_gejala`
+--
+ALTER TABLE `jenis_gejala`
+  ADD PRIMARY KEY (`id_gejala`),
+  ADD KEY `id_penyakit` (`id_penyakit`);
 
 --
 -- Indeks untuk tabel `jenis_penyakit`
@@ -149,13 +160,19 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT untuk tabel `data_tanaman`
 --
 ALTER TABLE `data_tanaman`
-  MODIFY `id_tanaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_tanaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `jenis_aglonema`
 --
 ALTER TABLE `jenis_aglonema`
-  MODIFY `id_jenis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_jenis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT untuk tabel `jenis_gejala`
+--
+ALTER TABLE `jenis_gejala`
+  MODIFY `id_gejala` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `jenis_penyakit`
@@ -183,7 +200,13 @@ ALTER TABLE `user_role`
 -- Ketidakleluasaan untuk tabel `data_tanaman`
 --
 ALTER TABLE `data_tanaman`
-  ADD CONSTRAINT `id_barang` FOREIGN KEY (`id_jenis`) REFERENCES `jenis_aglonema` (`id_jenis`);
+  ADD CONSTRAINT `id_jenis` FOREIGN KEY (`id_jenis`) REFERENCES `jenis_aglonema` (`id_jenis`);
+
+--
+-- Ketidakleluasaan untuk tabel `jenis_gejala`
+--
+ALTER TABLE `jenis_gejala`
+  ADD CONSTRAINT `id_penyakit` FOREIGN KEY (`id_penyakit`) REFERENCES `jenis_penyakit` (`id_penyakit`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
