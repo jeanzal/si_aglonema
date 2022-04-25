@@ -11,3 +11,10 @@ create table jenis_gejala (
     karakteristik_gejala text,
     CONSTRAINT id_penyakit FOREIGN KEY (`id_penyakit`) REFERENCES `jenis_penyakit` (`id_penyakit`)
 );
+
+create table data_obat (
+    id_obat int not null auto_increment primary key,
+    id_jenis_obat int,
+    kegunaan text,
+    CONSTRAINT id_jenis_obat FOREIGN KEY (`id_jenis_obat`) REFERENCES `jenis_obat` (`id_jenis_obat`)
+);

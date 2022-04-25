@@ -62,7 +62,7 @@
         <div id="obat" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="<?= base_url('obat/list_jenis_obat') ?>">Jenis Obat</a>
-                <a class="collapse-item" href="<?= base_url('obat/data_obat') ?>">Data Obat</a>
+                <a class="collapse-item" href="<?= base_url('obat/list_data_obat') ?>">Data Obat</a>
             </div>
         </div>
     </li>
