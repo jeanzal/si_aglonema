@@ -95,4 +95,93 @@ class Gejala extends CI_Controller
             redirect('gejala/list_penyakit');
         }
     }
+
+    public function list_gejala()
+    {
+        $data['title'] = "Data Gejala";
+        $data['title_dalam'] = "Jenis Gejala";
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['data_gejala'] = $this->Gejala_M->get_data_gejala();
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('gejala/jenis_gejala/list', $data);
+        $this->load->view('templates/footer');
+    }
+
+    public function add_gejala()
+    {
+        $data['title'] = "Tambah Jenis Gejala";
+        $data['title_dalam'] = "Tambah Jenis Gejala";
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['data_penyakit'] = $this->Gejala_M->get_data_jenis();
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('gejala/jenis_gejala/add', $data);
+        $this->load->view('templates/footer');
+    }
+
+    public function create_gejala()
+    {
+        $id_penyakit = $this->input->post('id_penyakit');
+        $karakteristik_gejala = $this->input->post('karakteristik_gejala');
+        $data = [
+            "id_penyakit" => $id_penyakit,
+            "karakteristik_gejala" => $karakteristik_gejala,
+        ];
+        if ($this->Gejala_M->add_jenis_gejala($data) == true) {
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert"> Data Berhasil disimpan </div>');
+            redirect('gejala/list_gejala');
+        } else {
+            $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert"> Data tidak berhasil disimpan </div>');
+            redirect('gejala/add_gejala');
+        }
+    }
+    public function edit_gejala($id)
+    {
+        $where = array('id_gejala' => $id);
+        $data['title'] = "Update Data Gejala";
+        $data['title_dalam'] = "Update Jenis Gejala";
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['edit_gejala'] = $this->Gejala_M->vEditGejala($where, 'jenis_gejala');
+        $data['data_penyakit'] = $this->Gejala_M->get_data_jenis();
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('gejala/jenis_gejala/edit', $data);
+        $this->load->view('templates/footer');
+    }
+    public function update_gejala()
+    {
+        $id_gejala = $this->input->post('id');
+        $id_penyakit = $this->input->post('id_penyakit');
+        $karakteristik_gejala = $this->input->post('karakteristik_gejala');
+        $data = [
+            "id_penyakit" => $id_penyakit,
+            "karakteristik_gejala" => $karakteristik_gejala
+        ];
+        $where = array('id_gejala' => $id_gejala);
+        if ($this->Gejala_M->update_data_gejala($where, $data, 'jenis_gejala') == false) {
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert"> Data Berhasil diupdate </div>');
+            redirect('gejala/list_gejala');
+        } else {
+            $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert"> Data Tidak Berhasil diupdate </div>');
+            redirect('gejala/list_gejala');
+        }
+    }
+    public function hapus_gejala($id)
+    {
+        $where = array('id_gejala' => $id);
+        if ($this->Gejala_M->hapus_gejala($where, 'jenis_gejala') == false) {
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert"> Data Berhasil dihapus </div>');
+            redirect('gejala/list_gejala');
+        } else {
+            $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert"> Data tidak berhasil dihapus </div>');
+            redirect('gejala/list_gejala');
+        }
+    }
 }

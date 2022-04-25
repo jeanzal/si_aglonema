@@ -23,4 +23,36 @@ class Gejala_M extends CI_Model
         $this->db->where($where);
         $this->db->delete($table);
     }
+
+    public function get_data_gejala()
+    {
+        $this->db->select('jenis_gejala.*, jenis_penyakit.jenis_penyakit');
+        $this->db->from('jenis_gejala');
+        $this->db->join('jenis_penyakit', 'jenis_gejala.id_penyakit = jenis_penyakit.id_penyakit');
+        $query = $this->db->get();
+        return $query->result();
+    }
+    public function add_jenis_gejala($data)
+    {
+        return $this->db->insert('jenis_gejala', $data);
+    }
+    public function vEditGejala($where, $table)
+    {
+        $this->db->select('jenis_gejala.*, jenis_penyakit.jenis_penyakit');
+        $this->db->from('jenis_gejala');
+        $this->db->join('jenis_penyakit', 'jenis_gejala.id_penyakit = jenis_penyakit.id_penyakit');
+        $this->db->where($where);
+        $query = $this->db->get();
+        return $query->result();
+    }
+    public function update_data_gejala($where, $data, $table)
+    {
+        $this->db->where($where);
+        $this->db->update($table, $data);
+    }
+    public function hapus_gejala($where, $table)
+    {
+        $this->db->where($where);
+        $this->db->delete($table);
+    }
 }
