@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 25 Apr 2022 pada 06.49
+-- Waktu pembuatan: 25 Apr 2022 pada 07.28
 -- Versi server: 10.4.16-MariaDB
 -- Versi PHP: 7.4.12
 
@@ -54,6 +54,17 @@ CREATE TABLE `jenis_gejala` (
   `id_gejala` int(11) NOT NULL,
   `id_penyakit` int(11) DEFAULT NULL,
   `karakteristik_gejala` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `jenis_obat`
+--
+
+CREATE TABLE `jenis_obat` (
+  `id_jenis_obat` int(11) NOT NULL,
+  `jenis_obat` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -135,6 +146,12 @@ ALTER TABLE `jenis_gejala`
   ADD KEY `id_penyakit` (`id_penyakit`);
 
 --
+-- Indeks untuk tabel `jenis_obat`
+--
+ALTER TABLE `jenis_obat`
+  ADD PRIMARY KEY (`id_jenis_obat`);
+
+--
 -- Indeks untuk tabel `jenis_penyakit`
 --
 ALTER TABLE `jenis_penyakit`
@@ -173,6 +190,12 @@ ALTER TABLE `jenis_aglonema`
 --
 ALTER TABLE `jenis_gejala`
   MODIFY `id_gejala` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT untuk tabel `jenis_obat`
+--
+ALTER TABLE `jenis_obat`
+  MODIFY `id_jenis_obat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `jenis_penyakit`
