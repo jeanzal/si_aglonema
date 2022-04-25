@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 25 Apr 2022 pada 07.28
+-- Waktu pembuatan: 25 Apr 2022 pada 08.13
 -- Versi server: 10.4.16-MariaDB
 -- Versi PHP: 7.4.12
 
@@ -20,6 +20,18 @@ SET time_zone = "+00:00";
 --
 -- Database: `si_aglonema`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `data_obat`
+--
+
+CREATE TABLE `data_obat` (
+  `id_obat` int(11) NOT NULL,
+  `id_jenis_obat` int(11) DEFAULT NULL,
+  `kegunaan` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -66,6 +78,14 @@ CREATE TABLE `jenis_obat` (
   `id_jenis_obat` int(11) NOT NULL,
   `jenis_obat` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `jenis_obat`
+--
+
+INSERT INTO `jenis_obat` (`id_jenis_obat`, `jenis_obat`) VALUES
+(3, 'Diare'),
+(4, 'Batuk');
 
 -- --------------------------------------------------------
 
@@ -126,6 +146,13 @@ INSERT INTO `user_role` (`id`, `role`) VALUES
 --
 
 --
+-- Indeks untuk tabel `data_obat`
+--
+ALTER TABLE `data_obat`
+  ADD PRIMARY KEY (`id_obat`),
+  ADD KEY `id_jenis_obat` (`id_jenis_obat`);
+
+--
 -- Indeks untuk tabel `data_tanaman`
 --
 ALTER TABLE `data_tanaman`
@@ -174,6 +201,12 @@ ALTER TABLE `user_role`
 --
 
 --
+-- AUTO_INCREMENT untuk tabel `data_obat`
+--
+ALTER TABLE `data_obat`
+  MODIFY `id_obat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT untuk tabel `data_tanaman`
 --
 ALTER TABLE `data_tanaman`
@@ -195,7 +228,7 @@ ALTER TABLE `jenis_gejala`
 -- AUTO_INCREMENT untuk tabel `jenis_obat`
 --
 ALTER TABLE `jenis_obat`
-  MODIFY `id_jenis_obat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_jenis_obat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `jenis_penyakit`
@@ -218,6 +251,12 @@ ALTER TABLE `user_role`
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
+
+--
+-- Ketidakleluasaan untuk tabel `data_obat`
+--
+ALTER TABLE `data_obat`
+  ADD CONSTRAINT `id_jenis_obat` FOREIGN KEY (`id_jenis_obat`) REFERENCES `jenis_obat` (`id_jenis_obat`);
 
 --
 -- Ketidakleluasaan untuk tabel `data_tanaman`
