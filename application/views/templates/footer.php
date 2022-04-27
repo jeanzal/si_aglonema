@@ -1,4 +1,5 @@
 <!-- Footer -->
+</div>
 <footer class="sticky-footer bg-white">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
@@ -20,8 +21,7 @@
 </a>
 
 <!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -33,8 +33,7 @@
             <div class="modal-body">Pilih "Keluar" untuk mengakhiri halaman ini !.</div>
             <div class="modal-footer">
                 <button class="btn btn-sm btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-sm btn-primary" href="<?= base_url('auth/logout') ?>"><i
-                        class="fas fa-sign-out-alt"></i> Keluar</a>
+                <a class="btn btn-sm btn-primary" href="<?= base_url('auth/logout') ?>"><i class="fas fa-sign-out-alt"></i> Keluar</a>
             </div>
         </div>
     </div>
