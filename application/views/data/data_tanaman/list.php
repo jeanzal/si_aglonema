@@ -32,7 +32,7 @@
             <?php endforeach; ?>
         <?php else : ?>
             <tr>
-                <td class="text-center" colspan="3">Tidak Ada data !</td>
+                <td class="text-center" colspan="4">Tidak Ada data !</td>
             </tr>
         <?php endif; ?>
     </table>

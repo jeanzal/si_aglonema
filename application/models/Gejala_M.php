@@ -26,9 +26,10 @@ class Gejala_M extends CI_Model
 
     public function get_data_gejala()
     {
-        $this->db->select('jenis_gejala.*, jenis_penyakit.jenis_penyakit');
+        $this->db->select('jenis_gejala.*, jenis_penyakit.jenis_penyakit, data_obat.jenis_obat, data_obat.kegunaan');
         $this->db->from('jenis_gejala');
         $this->db->join('jenis_penyakit', 'jenis_gejala.id_penyakit = jenis_penyakit.id_penyakit');
+        $this->db->join('data_obat', 'jenis_gejala.id_obat = data_obat.id_obat');
         $query = $this->db->get();
         return $query->result();
     }
@@ -38,9 +39,10 @@ class Gejala_M extends CI_Model
     }
     public function vEditGejala($where, $table)
     {
-        $this->db->select('jenis_gejala.*, jenis_penyakit.jenis_penyakit');
+        $this->db->select('jenis_gejala.*, jenis_penyakit.jenis_penyakit, data_obat.jenis_obat, data_obat.kegunaan');
         $this->db->from('jenis_gejala');
         $this->db->join('jenis_penyakit', 'jenis_gejala.id_penyakit = jenis_penyakit.id_penyakit');
+        $this->db->join('data_obat', 'jenis_gejala.id_obat = data_obat.id_obat');
         $this->db->where($where);
         $query = $this->db->get();
         return $query->result();

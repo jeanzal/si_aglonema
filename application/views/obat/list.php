@@ -8,7 +8,7 @@
         <tr>
             <th>No</th>
             <th>Jenis Obat</th>
-            <th>Kegunaa</th>
+            <th>Kegunaan</th>
             <th>Action</th>
         </tr>
         <?php
@@ -19,9 +19,17 @@
                 <tr>
                     <td><?= $no++; ?></td>
                     <td><?= $a->jenis_obat ?></td>
-                    <td><?= $a->kegunaan ?></td>
                     <td>
-                        <a href="<?= base_url('obat/edit_data_obat/' . $a->id_obat) ?>" class="btn btn-sm btn-info">
+                        <?php
+                        if ($a->kegunaan == "jamur") {
+                            echo "Untuk Jamur";
+                        } else if ($a->kegunaan == "hama") {
+                            echo "Untuk Hama";
+                        }
+                        ?>
+                    </td>
+                    <td>
+                        <a href="<?= base_url('obat/edit_obat/' . $a->id_obat) ?>" class="btn btn-sm btn-info">
                             <li class="fas fa-edit"></li>
                         </a>
                         <a onclick="return confirm('Apakah yakin hapus data ini ?')" href="<?= base_url('obat/hapus_obat/' . $a->id_obat) ?>" class="btn btn-sm btn-danger">
@@ -32,7 +40,7 @@
             <?php endforeach; ?>
         <?php else : ?>
             <tr>
-                <td class="text-center" colspan="3">Tidak Ada data !</td>
+                <td class="text-center" colspan="4">Tidak Ada data !</td>
             </tr>
         <?php endif; ?>
     </table>

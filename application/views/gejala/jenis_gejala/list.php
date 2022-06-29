@@ -8,6 +8,7 @@
         <tr>
             <th>No</th>
             <th>Jenis Penyakit</th>
+            <th>Obat</th>
             <th>Karakterisitik Gejala</th>
             <th>Action</th>
         </tr>
@@ -19,6 +20,7 @@
                 <tr>
                     <td><?= $no++; ?></td>
                     <td><?= $a->jenis_penyakit ?></td>
+                    <td><?= $a->jenis_obat ?></td>
                     <td><?= $a->karakteristik_gejala ?></td>
                     <td>
                         <a href="<?= base_url('gejala/edit_gejala/' . $a->id_gejala) ?>" class="btn btn-sm btn-info">
@@ -32,7 +34,7 @@
             <?php endforeach; ?>
         <?php else : ?>
             <tr>
-                <td class="text-center" colspan="3">Tidak Ada data !</td>
+                <td class="text-center" colspan="4">Tidak Ada data !</td>
             </tr>
         <?php endif; ?>
     </table>

@@ -14,6 +14,7 @@ class Gejala extends CI_Controller
             redirect('auth');
         }
         $this->load->model('Gejala_M');
+        $this->load->model('Obat_M');
     }
     public function list_penyakit()
     {
@@ -116,6 +117,7 @@ class Gejala extends CI_Controller
         $data['title_dalam'] = "Tambah Jenis Gejala";
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['data_penyakit'] = $this->Gejala_M->get_data_jenis();
+        $data['data_obat'] = $this->Obat_M->get_data_obat();
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -127,9 +129,11 @@ class Gejala extends CI_Controller
     public function create_gejala()
     {
         $id_penyakit = $this->input->post('id_penyakit');
+        $id_obat = $this->input->post('id_obat');
         $karakteristik_gejala = $this->input->post('karakteristik_gejala');
         $data = [
             "id_penyakit" => $id_penyakit,
+            "id_obat" => $id_obat,
             "karakteristik_gejala" => $karakteristik_gejala,
         ];
         if ($this->Gejala_M->add_jenis_gejala($data) == true) {
@@ -148,6 +152,7 @@ class Gejala extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['edit_gejala'] = $this->Gejala_M->vEditGejala($where, 'jenis_gejala');
         $data['data_penyakit'] = $this->Gejala_M->get_data_jenis();
+        $data['data_obat'] = $this->Obat_M->get_data_obat();
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -159,9 +164,11 @@ class Gejala extends CI_Controller
     {
         $id_gejala = $this->input->post('id');
         $id_penyakit = $this->input->post('id_penyakit');
+        $id_obat = $this->input->post('id_obat');
         $karakteristik_gejala = $this->input->post('karakteristik_gejala');
         $data = [
             "id_penyakit" => $id_penyakit,
+            "id_obat" => $id_obat,
             "karakteristik_gejala" => $karakteristik_gejala
         ];
         $where = array('id_gejala' => $id_gejala);

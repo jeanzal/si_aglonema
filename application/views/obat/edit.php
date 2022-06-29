@@ -6,17 +6,18 @@
             <div class="mb-3 col-5">
                 <div class="form-group">
                     <label class="form-label">Jenis Obat</label>
-                    <select name="id_jenis_obat" class="form-control">
-                        <option value="<?= $e->id_jenis_obat ?>"><?= $e->jenis_obat ?></option>
-                        <?php foreach ($data_jenis_obat as $a) : ?>
-                            <option value="<?php echo $a->id_jenis_obat ?>"><?= $a->jenis_obat; ?> </option>
-                        <?php endforeach; ?>
-                    </select>
+                    <div class="form-group">
+                        <input type="text" name="jenis_obat" value="<?= $e->jenis_obat ?>" class="form-control" placeholder="Jenis Obat" required>
+                    </div>
+                    <input type="hidden" name="id" value="<?= $e->id_obat ?>">
                 </div>
                 <div class="form-group">
                     <label class="form-label">Kegunaan</label>
-                    <textarea name="kegunaan" class="form-control" rows="3" placeholder="Kegunaan Obat" required><?= $e->kegunaan ?></textarea>
-                    <input type="hidden" name="id" value="<?= $e->id_obat ?>">
+                    <?php $ke = $e->kegunaan; ?>
+                    <select class="form-control" name="kegunaan">
+                        <option value="jamur" <?php echo ($ke == 'jamur') ? "selected" : "" ?>>Untuk Jamur</option>
+                        <option value="hama" <?php echo ($ke == 'hama') ? "selected" : "" ?>>Untuk Hama</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <a class="btn btn-sm btn-info" href="<?= base_url('obat/list_data_obat') ?>">

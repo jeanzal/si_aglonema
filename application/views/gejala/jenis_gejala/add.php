@@ -13,6 +13,15 @@
                 </select>
             </div>
             <div class="form-group">
+                <label class="form-label">Obat</label>
+                <select name="id_obat" class="form-control">
+                    <option value="" disabled>--Pilih--</option>
+                    <?php foreach ($data_obat as $b) : ?>
+                        <option value="<?php echo $b->id_obat ?>"><?= $b->jenis_obat; ?> </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+            <div class="form-group">
                 <label class="form-label">Karakteristik Gejala</label>
                 <textarea name="karakteristik_gejala" class="form-control" rows="3" required placeholder="Karakteristik Gejala"></textarea>
             </div>

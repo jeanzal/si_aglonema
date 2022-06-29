@@ -39,6 +39,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="<?= base_url('data/list_jenis') ?>">Jenis Aglonema</a>
                 <a class="collapse-item" href="<?= base_url('data/list_tanaman') ?>">Data Tanaman</a>
+                <a class="collapse-item" href="<?= base_url('obat/list_data_obat') ?>">Data Obat</a>
             </div>
         </div>
     </li>
@@ -51,18 +52,6 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="<?= base_url('gejala/list_penyakit') ?>">Jenis Penyakit</a>
                 <a class="collapse-item" href="<?= base_url('gejala/list_gejala') ?>">Jenis Gejala</a>
-            </div>
-        </div>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#obat" aria-expanded="true" aria-controls="obat">
-            <i class="fas fa-fw fa-cannabis"></i>
-            <span>Obat</span>
-        </a>
-        <div id="obat" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="<?= base_url('obat/list_jenis_obat') ?>">Jenis Obat</a>
-                <a class="collapse-item" href="<?= base_url('obat/list_data_obat') ?>">Data Obat</a>
             </div>
         </div>
     </li>
