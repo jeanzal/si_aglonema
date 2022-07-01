@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 29 Jun 2022 pada 21.27
--- Versi server: 10.4.22-MariaDB
--- Versi PHP: 7.3.33
+-- Generation Time: Jun 30, 2022 at 06:12 AM
+-- Server version: 10.4.19-MariaDB
+-- PHP Version: 8.0.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `data_obat`
+-- Table structure for table `data_obat`
 --
 
 CREATE TABLE `data_obat` (
@@ -34,18 +34,18 @@ CREATE TABLE `data_obat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `data_obat`
+-- Dumping data for table `data_obat`
 --
 
 INSERT INTO `data_obat` (`id_obat`, `jenis_obat`, `kegunaan`) VALUES
 (9, 'Fungisida', 'jamur'),
-(10, 'Insektisida', 'hama'),
-(11, 'Hibrida', 'hama');
+(10, 'Petisida', 'hama'),
+(11, '-', 'hama');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `data_tanaman`
+-- Table structure for table `data_tanaman`
 --
 
 CREATE TABLE `data_tanaman` (
@@ -55,21 +55,55 @@ CREATE TABLE `data_tanaman` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `data_tanaman`
+-- Dumping data for table `data_tanaman`
 --
 
 INSERT INTO `data_tanaman` (`id_tanaman`, `id_jenis`, `ciri_khas`) VALUES
-(4, 19, 'Daun berwarna merahhhh'),
-(5, 20, 'Daun berwarna Kuning'),
-(6, 21, 'Daun berwarna merah ke pink'),
-(7, 22, 'Daun berwarna pink'),
-(8, 23, 'Daun berwarna hijau dengan tangkai kuning'),
-(9, 24, 'Daun bewarna putih ');
+(9, 24, 'Aglaonema dengan daun berwarna putih halus'),
+(10, 19, 'Aglaonema dengan daun bewarna merah pekat'),
+(11, 20, 'Aglaonema dengan daun bewarna merah mudah'),
+(12, 21, 'Aglaonema dengan daun bewarna merah sedikit keunguan'),
+(13, 23, 'Aglaonema dengan daun bewarna hijau muda dengan tangkai bewarna hijau terang'),
+(14, 24, 'Aglaonema dengan daun bewarna putih menyeluruh'),
+(15, 25, 'Aglaonema dengan daun bewarna merah '),
+(16, 26, 'Aglaonema dengan daun perpaduan warna hitam dan merah'),
+(17, 27, 'Aglaonema dengan daun bewarna merah dengan bentuk memanjang'),
+(18, 28, 'Aglaonema dengan daun bewarna merah bercampur putih dengan bentuk memanjang'),
+(19, 29, 'Aglaonema dengan daun bewarna hijau muda dengan bentuk melebar'),
+(20, 30, 'Aglaonema dengan daun bewarna hijau muda berpadu putih'),
+(21, 31, 'Aglaonema dengan daun bewarna orange berpadu coklat'),
+(22, 32, 'Aglaonema dengan  daun bewarna orange '),
+(23, 33, 'Aglaonema dengan daun bewarna orange muda'),
+(24, 34, 'Aglaonema dengan daun bewarna pink dengan titik bewarna hitam'),
+(25, 35, 'Aglaonema dengan daun bewarna hijau muda'),
+(26, 36, 'Aglaonema dengan 3 warna putih hijau dan coklat'),
+(27, 37, 'Aglaonema dengan daun bewarna hijau terang dengan ukuran daun yang besar'),
+(28, 38, 'Aglaonema dengan daun kecil bewarna hijau muda'),
+(29, 39, 'Aglaonema dengan daun kecil bewarna hijau muda berpadu dengan warna putih'),
+(30, 40, 'Aglaonema dengan daun kecil bewarna putih dan merah'),
+(31, 41, 'Aglaonema dengan daun kecil bewarna putih dan hijau muda'),
+(32, 42, 'Aglaonema dengan daun memanjang bewarna merah dan hijau tua'),
+(33, 43, 'Aglaonema dengan bentuk daun memanjang dengan warna hijau tua'),
+(34, 44, 'Aglaonema dengan bentuk daun memanjang dengan warna hijau tua dan coklat'),
+(35, 45, 'Aglaonema dengan bentuk daun kecil bewarna putih sedikit coklat'),
+(36, 46, 'Aglaonema dengan daun kecil bewarna putih pucat'),
+(37, 47, 'Aglaonema dengan daun kecil bewarna putih dan hijau muda'),
+(38, 48, 'Aglaonema dengan bentuk daun memanjang bewarna hijau muda'),
+(39, 49, 'Aglaonema dengan bentuk daun melebar dengan warna hijau dan coklat'),
+(40, 50, 'Aglaonema dengan bentuk daun melebar bewarna hijau dan coklat'),
+(41, 51, 'Aglaonema dengan bentuk daun kecil dengan warna merah tua dan coklat'),
+(42, 52, 'Aglaonema dengan bentuk daun melebar dengan warna hijau pekat berpadu coklat'),
+(43, 53, 'Aglaonema dengan bentuk daun melebar bewarna hijau muda dengan garis coklat'),
+(44, 54, 'Aglaonema dengan daun melebar bewarna merah kehijauan'),
+(45, 55, 'Aglaonema dengan warna kuning keemasan dan hijau muda'),
+(46, 56, 'Aglaonema dengan daun bewarna merah dengan bercak hijau tua'),
+(47, 57, 'Aglaonema dengan bentuk memanjang bertangkai merah dengan warna bercorak hijau muda '),
+(48, 58, 'Aglaonema dengan daun melebar dengan warna kuning keemasan bercorak sedikit hijau muda');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `jenis_aglonema`
+-- Table structure for table `jenis_aglonema`
 --
 
 CREATE TABLE `jenis_aglonema` (
@@ -78,7 +112,7 @@ CREATE TABLE `jenis_aglonema` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `jenis_aglonema`
+-- Dumping data for table `jenis_aglonema`
 --
 
 INSERT INTO `jenis_aglonema` (`id_jenis`, `jenis_aglonema`) VALUES
@@ -119,12 +153,14 @@ INSERT INTO `jenis_aglonema` (`id_jenis`, `jenis_aglonema`) VALUES
 (53, 'Striptis'),
 (54, 'Ayunindi'),
 (55, 'Moonlight'),
-(56, 'Venus');
+(56, 'Venus'),
+(57, 'Hot Lady'),
+(58, 'Tequila Sunrise');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `jenis_gejala`
+-- Table structure for table `jenis_gejala`
 --
 
 CREATE TABLE `jenis_gejala` (
@@ -135,18 +171,36 @@ CREATE TABLE `jenis_gejala` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `jenis_gejala`
+-- Dumping data for table `jenis_gejala`
 --
 
 INSERT INTO `jenis_gejala` (`id_gejala`, `id_penyakit`, `id_obat`, `karakteristik_gejala`) VALUES
-(1, 13, 9, 'Daun Membusuk'),
 (2, 11, NULL, 'Daun keringvfefef'),
-(4, 14, 11, 'Oke egegefe');
+(5, 4, 9, 'Daun Membusuk'),
+(6, 4, 9, 'Tangkai / Batang Membusuk'),
+(7, 4, 9, 'Daun dan Tangkai Membusuk'),
+(8, 7, 9, 'Akar Membusuk'),
+(9, 9, 9, 'Daun Tanaman Layu'),
+(10, 9, 9, 'Daun dan Tangkai Tanaman Layu'),
+(11, 10, 10, 'Bintik Putih Halus Pada Daun Tanaman'),
+(12, 10, 10, 'Bintik Putih Halus Pada Batang'),
+(13, 10, 10, 'Bintik Putih Halus Pada Batang Dan Daun'),
+(14, 11, 10, 'Bintik Putih Halus Pada Daun'),
+(15, 12, 10, 'Daun Aglaonema Berlubang halus'),
+(16, 13, 10, 'Daun Aglaonema Berlubang '),
+(17, 14, 10, 'Daun Aglaonema Berlubang'),
+(18, 6, 9, 'Bercak Merah Pada Daun Aglaonema'),
+(19, 6, 9, 'Bercak Daun Seperti Terbakar'),
+(20, 5, 9, 'Daun dan Tangkai Aglaonema Berjamur '),
+(21, 8, 9, 'Daun Aglaonema Mengeriput'),
+(22, 8, 9, 'Daun Tanaman Mengeriting'),
+(23, 4, 9, 'Daun bewarna kecoklatan'),
+(24, 12, 10, 'Daun Aglaonema Berlubang');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `jenis_penyakit`
+-- Table structure for table `jenis_penyakit`
 --
 
 CREATE TABLE `jenis_penyakit` (
@@ -155,7 +209,7 @@ CREATE TABLE `jenis_penyakit` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `jenis_penyakit`
+-- Dumping data for table `jenis_penyakit`
 --
 
 INSERT INTO `jenis_penyakit` (`id_penyakit`, `jenis_penyakit`) VALUES
@@ -174,7 +228,7 @@ INSERT INTO `jenis_penyakit` (`id_penyakit`, `jenis_penyakit`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -189,7 +243,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `gambar`, `password`, `role_id`, `is_active`, `date_created`) VALUES
@@ -198,7 +252,7 @@ INSERT INTO `user` (`id`, `name`, `email`, `gambar`, `password`, `role_id`, `is_
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user_role`
+-- Table structure for table `user_role`
 --
 
 CREATE TABLE `user_role` (
@@ -207,7 +261,7 @@ CREATE TABLE `user_role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `user_role`
+-- Dumping data for table `user_role`
 --
 
 INSERT INTO `user_role` (`id`, `role`) VALUES
@@ -219,26 +273,26 @@ INSERT INTO `user_role` (`id`, `role`) VALUES
 --
 
 --
--- Indeks untuk tabel `data_obat`
+-- Indexes for table `data_obat`
 --
 ALTER TABLE `data_obat`
   ADD PRIMARY KEY (`id_obat`);
 
 --
--- Indeks untuk tabel `data_tanaman`
+-- Indexes for table `data_tanaman`
 --
 ALTER TABLE `data_tanaman`
   ADD PRIMARY KEY (`id_tanaman`),
   ADD KEY `id_jenis` (`id_jenis`);
 
 --
--- Indeks untuk tabel `jenis_aglonema`
+-- Indexes for table `jenis_aglonema`
 --
 ALTER TABLE `jenis_aglonema`
   ADD PRIMARY KEY (`id_jenis`);
 
 --
--- Indeks untuk tabel `jenis_gejala`
+-- Indexes for table `jenis_gejala`
 --
 ALTER TABLE `jenis_gejala`
   ADD PRIMARY KEY (`id_gejala`),
@@ -246,81 +300,81 @@ ALTER TABLE `jenis_gejala`
   ADD KEY `id_obat` (`id_obat`);
 
 --
--- Indeks untuk tabel `jenis_penyakit`
+-- Indexes for table `jenis_penyakit`
 --
 ALTER TABLE `jenis_penyakit`
   ADD PRIMARY KEY (`id_penyakit`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `user_role`
+-- Indexes for table `user_role`
 --
 ALTER TABLE `user_role`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `data_obat`
+-- AUTO_INCREMENT for table `data_obat`
 --
 ALTER TABLE `data_obat`
   MODIFY `id_obat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT untuk tabel `data_tanaman`
+-- AUTO_INCREMENT for table `data_tanaman`
 --
 ALTER TABLE `data_tanaman`
-  MODIFY `id_tanaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_tanaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
--- AUTO_INCREMENT untuk tabel `jenis_aglonema`
+-- AUTO_INCREMENT for table `jenis_aglonema`
 --
 ALTER TABLE `jenis_aglonema`
-  MODIFY `id_jenis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id_jenis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
--- AUTO_INCREMENT untuk tabel `jenis_gejala`
+-- AUTO_INCREMENT for table `jenis_gejala`
 --
 ALTER TABLE `jenis_gejala`
-  MODIFY `id_gejala` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_gejala` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT untuk tabel `jenis_penyakit`
+-- AUTO_INCREMENT for table `jenis_penyakit`
 --
 ALTER TABLE `jenis_penyakit`
   MODIFY `id_penyakit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT untuk tabel `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `user_role`
+-- AUTO_INCREMENT for table `user_role`
 --
 ALTER TABLE `user_role`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `data_tanaman`
+-- Constraints for table `data_tanaman`
 --
 ALTER TABLE `data_tanaman`
   ADD CONSTRAINT `id_jenis` FOREIGN KEY (`id_jenis`) REFERENCES `jenis_aglonema` (`id_jenis`);
 
 --
--- Ketidakleluasaan untuk tabel `jenis_gejala`
+-- Constraints for table `jenis_gejala`
 --
 ALTER TABLE `jenis_gejala`
   ADD CONSTRAINT `id_obat` FOREIGN KEY (`id_obat`) REFERENCES `data_obat` (`id_obat`),
